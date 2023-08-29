@@ -104,6 +104,7 @@ class VC:
         resample_sr,
         rms_mix_rate,
         protect,
+        backend_url
     ):
         if input_audio_path is None:
             return "You need to upload an audio", None
@@ -150,6 +151,7 @@ class VC:
                 self.version,
                 protect,
                 f0_file,
+                backend_url
             )
             if self.tgt_sr != resample_sr >= 16000:
                 self.tgt_sr = resample_sr
