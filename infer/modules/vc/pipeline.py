@@ -299,6 +299,7 @@ class Pipeline(object):
         version,
         protect,
         f0_file=None,
+        backend_url
     ):
         if (
             file_index != ""
