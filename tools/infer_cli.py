@@ -31,6 +31,7 @@ def arg_parse() -> tuple:
     parser.add_argument("--resample_sr", type=int, default=0, help="resample sr")
     parser.add_argument("--rms_mix_rate", type=float, default=1, help="rms mix rate")
     parser.add_argument("--protect", type=float, default=0.33, help="protect")
+    parser.add_argument("--backend-update-url", type=str, dest="backend_url")
 
     args = parser.parse_args()
     sys.argv = sys.argv[:1]
@@ -59,6 +60,7 @@ def main():
         args.resample_sr,
         args.rms_mix_rate,
         args.protect,
+        args.backend_url
     )
     wavfile.write(args.opt_path, wav_opt[0], wav_opt[1])
 
